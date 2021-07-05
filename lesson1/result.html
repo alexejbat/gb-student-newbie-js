@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 10 + 10 + "10"; // десять плюс десять равно 20 + строка десять равняется 2010
+        console.log(a);         // выводим результат а в консоли
+
+        let b = 10 + "10" + 10; // десять плюс строка десять плюс десять равняется 101010
+        console.log(b);         // выводим результат b в консоли
+
+        let c = 10 + 10 + +"10";  // десять плюс десять плюс унарный плюс десять приобразовывает в число равняется 30
+        console.log(c);           // выводим результат c в консоли
+
+       let d = 10 / -"";           // десять делим на минус пустую строку
+       console.log(d);              // выводим результат d минус бесконечность
+
+        let e = (10 / +"2,5");       // десять делим на унарный плюс, переделывает строку в число 2,5
+        console.log(e);             // выводим результат e  Not a Number - 2,5 не является числом, запятая это операнд
+    </script>
+</body>
+</html>
