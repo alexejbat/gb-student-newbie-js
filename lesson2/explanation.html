@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        let a = 1, b = 1, c, d;
+        c = ++a; // арифметический оператор в префиксной форме увеличивает значение на единицу
+        alert(c); // поэтому ответ: 2
+        
+        //пример 2
+        d = b++; // инкремент в постфиксной форме возращает исходное значение b
+        alert(d); // равное : 1
+
+        //пример 3
+        c = 2 + ++a; // значение ++a равно: 2, увеличивается на единицу и
+        alert(c); //сумма двух чисел состовляет: 5
+
+        //пример 4
+        d = 2 + b++; //значение b++ приняло значение 2
+        alert(d); //сумма вычисления составило: 4
+        alert(a); //взяло значение из 3 примера
+        alert(b); //b равнялась 1 в трех примерах и сумму положила в коробку значенияем 3
+    </script>
+</body>
+</html>
