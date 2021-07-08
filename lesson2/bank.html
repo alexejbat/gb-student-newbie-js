@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        alert("Вас приветствует ООО Банк")
+        let rubble = +prompt("Введите сумму, которую хотите положить!")
+
+        let v = ["ь", "я", "ей"]
+        let n = rubble
+
+        function sklonenie(number, txt) {
+        var cases = [2, 0, 1, 1, 1, 2];
+        return txt[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+}
+
+        alert("Ваша сумма в " + rubble + " рубл" + sklonenie(n, v) + " успешно зачислена")
+    </script>
+</body>
+</html>
