@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Фильтры</title>
 </head>
+
 <body>
     <script>
         "use strict"
-        const products = [
-            {
+        const products = [{
                 id: 3,
                 price: 127,
                 photos: [
@@ -36,20 +37,20 @@
             },
         ];
 
-        let photos = products.filter(function(item) {
+        let photos = products.filter(function (item) {
             return "photos" in item && item.photos.length > 0
         })
 
         console.log(photos)
 
 
-        let sorting = products.sort(function(a, b) {
+        let sorting = products.sort(function (a, b) {
             return a.price - b.price
 
         })
 
         console.log(sorting)
-
     </script>
 </body>
+
 </html>
