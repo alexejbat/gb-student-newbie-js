@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        function Post(author, text, date){
+            this.author = author;
+            this.text = text;
+            this.date = date;
+            this.show = function(say){
+                console.log(this.author + " say " + this.text)
+            }
+        }
+
+        const post1 = new Post("Василий", " lorem ipsum1 ", " 20/07/2021 ");
+
+        const post2 = new Post("Вероника", "hello", "31/07/2019");
+        
+        post2.show()
+
+        Post.prototype.show = function(){
+            alert(this.author)
+        }
+
+        function AttachedPost(author, text, date){
+            Post.call(this, author);
+            this.text = text
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.show2 = function(){
+            console.log(this.text);
+        };
+
+        let edit = new AttachedPost("hola");
+        edit.show();
+       
+
+
+
+
+    </script>
+</body>
+</html>
