@@ -41,7 +41,16 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        setTimeout(function () {
+
+            let images = document.querySelectorAll('img');
+            for (let i = 0; i < images.length; i++) {
+                images[i].setAttribute('src', `images/loading.gif`);
+            }
+        }, 3000);
+
     </script>
 </body>
 </html>

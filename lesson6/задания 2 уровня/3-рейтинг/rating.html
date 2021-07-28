@@ -48,6 +48,16 @@
         firstStar.addEventListener('mouseout', function() {
             firstStar.classList.remove(goldenClass);
         });
+
+        let stars = document.querySelectorAll('i');
+        stars.forEach(function(i) {
+            i.addEventListener('mouseover', function(event) {
+                addGoldenClass(event.target);
+            });
+            i.addEventListener('mouseout', function(event) {
+                removeGoldenClass(event.target);
+            });
+        })
     </script>
 </body>
 </html>
