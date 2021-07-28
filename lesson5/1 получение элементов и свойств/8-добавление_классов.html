@@ -19,6 +19,13 @@
     -->
 
     <script>
+        'use strict';
+        let element = document.querySelectorAll('b');
+        element.forEach(function (b) {
+            if (!b.classList.contains('sign')) {
+                b.classList.add('sign');
+            }
+        });
         
     </script>
 </body>
