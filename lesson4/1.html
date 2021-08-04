@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0-999</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+       // let num = prompt("Введите число от 0 до 999");
+
+        
+        
+        function doObj(num) {
+           
+            if (num > 999 || num < 0) {
+                console.log("Введите число от 0 до 999, пожалуйста");            
+                let num = {};
+                return num;
+            } else {
+                let object = [
+                    "units: ",
+                    "tens: ",
+                    "сотни: "
+                ];
+
+                let num = {};
+
+
+                for(let i = 0; num != 0; i++);
+                num = (num - num % 10) / 10;
+
+               return object 
+           }    
+        }
+
+     console.log(doObj(78))
+ 
+
+
+    </script>
+</body>
+</html>

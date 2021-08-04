@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use stirct"
+
+
+//      -> типы на es5        
+        function Product(name, price){
+            this.name = name;
+            this.price = price;
+            this.make25PercentDiscount = function(discount){
+                this.price - (this.price / 100 * discount);
+            };
+        }
+
+        Product.prototype.show = function(){
+            alert(this.name + " цена: "+ this.price)
+        };
+
+
+        let book1 = new Product("<Властелин колец>", 1450);
+
+        book1.show()
+
+        
+       
+
+//      -> типы на es6
+
+//        class Product {
+//            constructor(name, price){
+//                this.name = name;
+//                this.price = price;
+//            }
+//
+//            show(){
+//                alert(this.name + " цена: "+ this.price)
+//            }
+ //       }
+//
+//        let book1 = new Product("<Властелин колец>", "1450 руб.");
+ //       book1.show()
+//        
+
+    </script>
+</body>
+</html>
