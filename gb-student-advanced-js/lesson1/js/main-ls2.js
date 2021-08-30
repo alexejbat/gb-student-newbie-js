@@ -2,14 +2,11 @@
 
 /**
  * Создаем класс для товаров.
- * @param {class} ProductList
- * @param {constructor} constructor
- * @param {goods} product
- * 
+
  * Метод возращает div.
  * @param {render} ProductItem.render
  * Метод высчитывает сумму товара
- * @param {getSum}
+ * @see getSum()
  */
 
 class ProductList {
@@ -43,17 +40,17 @@ class ProductList {
         for(let product of this.goods){
             sum += product.price;
         }   
-        console.log(sum)
+        console.log(sum);
     }
 }
 
 /**
- * @param {img}  как указать путь на картинку в локальной папке? В примере была ссылка !
+ * @param {img} string как указать путь на картинку в локальной папке? В примере была ссылка !
  */
 
 class ProductItem {
     constructor(product, img = 'img/ryba.jpg') {
-        this.id = product.id
+        this.id = product.id;
         this.title = product.title;
         this.price = product.price;
         this.img = product.img;
