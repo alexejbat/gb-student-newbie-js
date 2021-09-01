@@ -19,7 +19,7 @@ class Validator{
     }
 
     validate(regexp, value){
-        regexp.test(value)
+        regexp.test(value);
     }
 
     _validateForm(){
@@ -40,8 +40,8 @@ class Validator{
 
     _validate(field) {
         if (this.patterns[field.name]){
-            if(!this.patterns[field.name].test(filed.value)){
-                filed.classList.add('invalid');
+            if(!this.patterns[field.name].test(field.value)){
+                field.classList.add('invalid');
                 this._addErrorMsg(field);
                 this._watchField(field);
             }
@@ -50,7 +50,7 @@ class Validator{
 
     _addErrorMsg(field){
         let error = `<div class="${this.errorClass}">${this.errors[field.name]}</div> `;
-        field.parentNode.insertAdjacenHTML('beforeend', error);
+        field.parentNode.insertAdjacentHTML('beforeend', error);
 
     }
 
@@ -73,8 +73,6 @@ class Validator{
         })
     }
 }
-
-
 
 
 // let reg = /^\+7\(\d{3}\)d{3}-\d{4}$/,

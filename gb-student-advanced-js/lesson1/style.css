@@ -318,3 +318,16 @@ body {
 .footer-copy i:hover {
     color: #f16d7f;
 }
+
+.error-msg {
+    color: #f16d7f;
+    margin: 10px 0;
+}
+
+.invalid {
+    border: 2px solid #f16d7f;
+}
+
+.valid {
+    border: 2px solid green;
+}

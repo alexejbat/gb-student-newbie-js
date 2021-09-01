@@ -68,7 +68,7 @@
         'use strict'
         window.onload = ()  => {
             document.getElementById('contact').addEventListener('Отправить', e => {
-                let valid = new Validator('footer-form');
+                let valid = new Validator('contact');
                 if (!valid.valid){
                     e.preventDefault();
                 }
