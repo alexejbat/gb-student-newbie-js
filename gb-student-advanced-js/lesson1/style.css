@@ -51,6 +51,7 @@ body {
     transition: color .5s, background-color .5s;
     cursor: pointer;
     opacity: 0.6;
+    margin-left: 5px;
 }
 
 .cart-button:hover {
@@ -119,6 +120,7 @@ body {
 .basket {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .products-cart {
@@ -250,6 +252,24 @@ body {
     margin-bottom: 10px;
 }
 
+.search-form {
+    display: inline-block;
+    justify-content: center;
+}
+
+.search-field {
+    height: 49px;
+    background-color: #E1E1E1;
+    color: #000000;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    opacity: 0.4;
+    text-indent: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 1;
+}
+
 .txtarea {
     width: 617px;
     height: 80px;
@@ -321,13 +341,27 @@ body {
 
 .error-msg {
     color: #f16d7f;
+    ;
     margin: 10px 0;
 }
 
 .invalid {
-    border: 2px solid #f16d7f;
+    border: 2px solid #757575;
 }
 
 .valid {
     border: 2px solid green;
+}
+
+.btn-search {
+    color: #ffffff;
+    opacity: 1;
+    margin-left: -5px;
+    height: 50px;
+    width: 49px;
+}
+
+.btn-search:hover {
+    background-color: #f16d7f;
+    opacity: 1;
 }

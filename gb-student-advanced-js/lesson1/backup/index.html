@@ -7,19 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вяленая и копченая рыба родом из Астрахани</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
+<div id="app">
     <header>   
         <div class="button">
             <div class="logo">Интернет-магазин <br>
                 <span class="ryba">рыбной продукции</span>
             </div>
             <div class="basket">
-                <button class="cart-button" type="button">Корзина</button>
+
+                <form action="#" class="search-form" @submit.prevent="filter">
+                    <input type="text" class="search-field" v-model="userSearch">
+                    <button type="submit" class="btn-search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button>
+                
+                <cart :cart-items="cartItems"
+                :img="imgCart"
+                :visibility="showCart"></cart>
+                
                 
             </div>      
         </div>
-        <div class="products-cart invisible"></div>
+<!--        <div class="products-cart invisible" v-show="showCart"></div>
+            <p v-if="!cartItems.length">Cart is empy</p>
+
+            <div class="basket-item" v-for="item of cartItems" :key="item.id_product">
+                <div class="product-left">
+                <img class="product-img" scr="imgCart" alt="img">
+                <div class="prodcut-desc">
+                <p class="title">{{ item.product_name }}</p>
+                <p class="quantity">Quantity: {{ item.quantity }}</p>
+            <p class="price">$ {{ item.price }} each</p>
+            </div>
+            </div>
+            <div class="product-right">
+                <p class="product-price">{item.quantity * item.price}</p>
+                <button class="delete-button" @click="remove(item)">&times;</button>
+            </div>
+            </div>-->
     </header>
     <main class="goods">
         <p>
@@ -28,10 +58,58 @@
             </span>
         </p>
         <div class="goods-list"></div>
+        <products :products="filtered" :img="ImgProduct" @add-product="addProduct"></products>
     </main>
+</div>
+    <!-- футер с формой обратной связью   -->
+
+    <footer class="footer">
+        <div class="footer-form">
+            <h3 class="footer-header">Форма обратной связи</h3>
+            <form class="footer-form" id="contact" action="#"  name="contact">
+                <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя" required>
+                <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон" required> 
+                <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail" required> 
+                <div class="span"></div>
+                <textarea id="msg" class="txtarea" name="msg" placeholder="Cообщение"></textarea>
+                
+                <button class="footer-send" id="send">Отправить</button>
+            </form>
+        </div>
+        <hr>
+        <div class="footer-copy">
+            <div class="copy-end">
+                <p class="copy-end_text">&copy 2021 Интернет-магазин рыбной продукции</p>
+            </div>
+            <div class="copy-smm">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></i></a>
+                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                <a href="#"><i class="fab fa-google-plus-square"></i></a>
+            </div>
+        </div>
+    </footer>
     <!--<script src="js/main.js"></script> -->
-    <script src="js/main-ls3.js"></script>   
-    <script src="js/basket.js"></script>
+      
+<!--<script src="js/basket.js"></script>-->    
+<!--<script src="js/invalidform.js"></script>-->      
+    <script>
+        'use strict'
+        window.onload = ()  => {
+            document.getElementById('contact').addEventListener('Отправить', e => {
+                let valid = new Validator('contact');
+                if (!valid.valid){
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
+    <script src="js/productComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
+    <script src="js/main-ls5.js"></script> 
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 </body>
 
 </html>
