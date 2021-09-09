@@ -6,7 +6,7 @@ const app = new Vue({
     el: '#app',
     data: {
         userSearch: '',
-        showcart: false,
+        showСart: false,
         catalogUrl: '/catalogData.json',
         cartUrl: '/getBasket.json',
         cartItems: [],
@@ -21,7 +21,10 @@ const app = new Vue({
         getJson(url){
             return fetch(url)
                 .then(result =>  result.json())
-                .catch(error => console.log(error))     
+                .catch(error => {
+                    console.log(error);
+                    this.error = true;
+                })       
         },
 
         addProduct(item){
@@ -43,7 +46,7 @@ const app = new Vue({
             this.getJson(`${API}/addtoBasket.json`)
                 .then(data => {
                     if (data.result === 1) {
-                        if(item.quantity > 1){;
+                        if(item.quantity > 1){
                             item.quantity--;
                         } else {
                             this.cartItems.splice(this.cartItems.indexOf(item), 1);
@@ -57,6 +60,7 @@ const app = new Vue({
             this.filtered = this.products.filter(el => regexp.test(el.product_name));
         }
     },
+
     mounted(){
         this.getJson(`${API + this.cartUrl}`)
             .then(data => {
@@ -73,11 +77,12 @@ const app = new Vue({
             });     
         this.getJson(`getProducts.json`)   
             .then(data => {
-                for (let item of data) {
+                for (let item of data){
                     this.$data.products.push(item);
                     this.$data.filtered.push(item);    
                 }
-            })     
+            })                 
+        
     }
 });
 

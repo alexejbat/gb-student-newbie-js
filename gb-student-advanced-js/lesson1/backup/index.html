@@ -17,39 +17,17 @@
                 <span class="ryba">рыбной продукции</span>
             </div>
             <div class="basket">
-
-                <form action="#" class="search-form" @submit.prevent="filter">
-                    <input type="text" class="search-field" v-model="userSearch">
-                    <button type="submit" class="btn-search">
-                        <i class="fas fa-search"></i>
-                    </button>
+                <div_filter></div_filter>
+               
                 </form>
                 <button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button>
                 
-                <cart :cart-items="cartItems"
-                :img="imgCart"
-                :visibility="showCart"></cart>
-                
-                
+                <cart   :cart-items="cartItems"
+                        :img="imgCart"
+                        :visibility="showCart"
+                        @remove="remove"></cart> 
             </div>      
         </div>
-<!--        <div class="products-cart invisible" v-show="showCart"></div>
-            <p v-if="!cartItems.length">Cart is empy</p>
-
-            <div class="basket-item" v-for="item of cartItems" :key="item.id_product">
-                <div class="product-left">
-                <img class="product-img" scr="imgCart" alt="img">
-                <div class="prodcut-desc">
-                <p class="title">{{ item.product_name }}</p>
-                <p class="quantity">Quantity: {{ item.quantity }}</p>
-            <p class="price">$ {{ item.price }} each</p>
-            </div>
-            </div>
-            <div class="product-right">
-                <p class="product-price">{item.quantity * item.price}</p>
-                <button class="delete-button" @click="remove(item)">&times;</button>
-            </div>
-            </div>-->
     </header>
     <main class="goods">
         <p>

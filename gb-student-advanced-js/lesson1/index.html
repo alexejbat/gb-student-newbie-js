@@ -17,49 +17,34 @@
                 <span class="ryba">рыбной продукции</span>
             </div>
             <div class="basket">
-
-                <form action="#" class="search-form" @submit.prevent="filter">
-                    <input type="text" class="search-field" v-model="userSearch">
-                    <button type="submit" class="btn-search">
-                        <i class="fas fa-search"></i>
-                    </button>
+                <search></search>
+               
                 </form>
                 <button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button>
                 
-                <cart :cart-items="cartItems"
-                :img="imgCart"
-                :visibility="showCart"></cart>
-                
-                
-            </div>      
+                <cart   :cart-items="cartItems"
+                        :img="imgCart"
+                        :visibility="showCart"
+                        @remove="remove"></cart> 
+            </div>    
         </div>
-<!--        <div class="products-cart invisible" v-show="showCart"></div>
-            <p v-if="!cartItems.length">Cart is empy</p>
-
-            <div class="basket-item" v-for="item of cartItems" :key="item.id_product">
-                <div class="product-left">
-                <img class="product-img" scr="imgCart" alt="img">
-                <div class="prodcut-desc">
-                <p class="title">{{ item.product_name }}</p>
-                <p class="quantity">Quantity: {{ item.quantity }}</p>
-            <p class="price">$ {{ item.price }} each</p>
-            </div>
-            </div>
-            <div class="product-right">
-                <p class="product-price">{item.quantity * item.price}</p>
-                <button class="delete-button" @click="remove(item)">&times;</button>
-            </div>
-            </div>-->
     </header>
-    <main class="goods">
-        <p>
-            <span>
+    <main>
 
-            </span>
-        </p>
-        <div class="goods-list"></div>
-        <products :products="filtered" :img="ImgProduct" @add-product="addProduct"></products>
+<!-- добавляем товары -->        
+        <div class="goods-list">
+            <div class="goods-item" v-for="item of filtered" :key="item.id_product">
+                <img :src="imgProduct" alt="img" class="item-img">
+                <h3 class="item-text">{{ item.product_name }}</h3>
+                <p class="item-text">${{ item.price }}</p>
+                <button class="buy-btn" :data-product="item" @click="addProduct(item)">Купить</button>
+            </div>
+        </div>
+
+<!--выдает ошибку -->    
+        <products :products="filtered" :img="ImgProduct" @add-product="addProduct"></products>    
     </main>
+    <error v-if="error"></error>
 </div>
     <!-- футер с формой обратной связью   -->
 
@@ -90,26 +75,12 @@
             </div>
         </div>
     </footer>
-    <!--<script src="js/main.js"></script> -->
-      
-<!--<script src="js/basket.js"></script>-->    
-<!--<script src="js/invalidform.js"></script>-->      
-    <script>
-        'use strict'
-        window.onload = ()  => {
-            document.getElementById('contact').addEventListener('Отправить', e => {
-                let valid = new Validator('contact');
-                if (!valid.valid){
-                    e.preventDefault();
-                }
-            });
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
     <script src="js/productComponent.js"></script>
     <script src="js/cartComponent.js"></script>
     <script src="js/main-ls5.js"></script> 
-    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/error.js"></script>
 </body>
 
 </html>
