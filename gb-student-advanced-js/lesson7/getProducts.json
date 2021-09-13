@@ -1,0 +1,43 @@
+[
+  {
+    "id_product": 124,
+    "img": "img/ryba.jpg",
+    "product_name": "Сопа",
+    "price": 1600
+  },
+  {
+    "id_product": 457,
+    "product_name": "Тарань",
+    "price": 3000
+  },
+  {
+    "id_product": 1524,
+    "product_name": "Вобла",
+    "price": 1600
+  },
+  {
+    "id_product": 4557,
+    "product_name": "Корюшка",
+    "price": 3000
+  },
+  {
+    "id_product": 124,
+    "product_name": "Щука",
+    "price": 1600
+  },
+  {
+    "id_product": 457,
+    "product_name": "Сом",
+    "price": 3000
+  },
+  {
+    "id_product": 124,
+    "product_name": "Икра",
+    "price": 1600
+  },
+  {
+    "id_product": 457,
+    "product_name": "Осётр",
+    "price": 3000
+  }
+]

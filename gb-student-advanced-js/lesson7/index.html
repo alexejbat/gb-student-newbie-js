@@ -7,43 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вяленая и копченая рыба родом из Астрахани</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 <div id="app">
-    <header>   
-        <div class="button">
-            <div class="logo">Интернет-магазин <br>
-                <span class="ryba">рыбной продукции</span>
-            </div>
-            <div class="basket">
-                <search></search>
-                <button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button>
-                
-                <cart   :cart-items="cartItems"
-                        :img="imgCart"
-                        :visibility="showCart"
-                        @remove="remove"></cart> 
-            </div>    
+    <header class="button">         
+        <div class="logo">Интернет-магазин <br>
+            <span class="ryba">рыбной продукции</span>
+        </div>
+        <div class="basket">
+            <search></search>
+            <nav></nav>
+<!--<button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button> -->                  
+            <cart ref="cart"></cart>    
         </div>
     </header>
-    <main>
 
-<!-- добавляем товары  -->       
-        <div class="goods-list">
-            <div class="goods-item" v-for="item of filtered" :key="item.id_product">
-                <img :src="imgProduct" alt="img" class="item-img">
-                <h3 class="item-text">{{ item.product_name }}</h3>
-                <p class="item-text">${{ item.price }}</p>
-                <button class="buy-btn" :data-product="item" @click="addProduct(item)">Купить</button>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f16d7f;" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+              <a class="nav-link" href="#">О нас</a>
+              <a class="nav-link" href="#">Цены</a>
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Контакты</a>
             </div>
+          </div>
         </div>
+    </nav>
 
-<!--выдает ошибку -->    
-        <products :products="filtered" :img="ImgProduct" @add-product="addProduct"></products>    
+    <main>
+        <products ref="products"></products>    
     </main>
-    <error v-if="error"></error>
+    <error ref="error"></error>
 </div>
+
+
+
     <!-- футер с формой обратной связью   -->
 
     <footer class="footer">
@@ -74,11 +80,11 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
-    <script src="js/productComponent.js"></script>
-    <script src="js/cartComponent.js"></script>
-    <script src="js/main-ls5.js"></script> 
-    <script src="js/filter.js"></script>
+    <script src="js/ProdComp.js"></script>
+    <script src="js/CartComp.js"></script> 
+    <script src="js/FilterComp.js"></script>
     <script src="js/error.js"></script>
+    <script src="js/main.js"></script> 
 </body>
 
 </html>
