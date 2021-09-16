@@ -1,0 +1,52 @@
+[
+  {
+    "id_product": 124,
+    "product_name": "Mango People T-shirt",
+    "price": 1600
+  },
+  {
+    "id_product": 457,
+    "product_name": "Gathered neck T-shirt",
+    "price": 3000
+  },
+  {
+    "id_product": 1524,
+    "product_name": "Long-sleeved t-shirt with ruffles",
+    "price": 1600
+  },
+  {
+    "id_product": 4557,
+    "product_name": "Turtleneck long-sleeved t-shirt",
+    "price": 3000
+  },
+  {
+    "id_product": 1246,
+    "product_name": "Gathered neck T-shirt",
+    "price": 1600
+  },
+  {
+    "id_product": 4578,
+    "product_name": "Long-sleeve t-shirt with ruffles",
+    "price": 3000
+  },
+  {
+    "id_product": 1249,
+    "product_name": "Long-sleeved V-neck T-shirt",
+    "price": 1600
+  },
+  {
+    "id_product": 1249,
+    "product_name": "Asymmetric design top",
+    "price": 1600
+  },
+  {
+    "id_product": 1249,
+    "product_name": "Ribbed knit polo shirt",
+    "price": 1600
+  },
+  {
+    "id_product": 4579,
+    "product_name": "Message cotton T-shirt",
+    "price": 3000
+  }
+]
