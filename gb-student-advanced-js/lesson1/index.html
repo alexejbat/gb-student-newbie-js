@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вяленая и копченая рыба родом из Астрахани</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<div id="app">
+    <header>   
+        <div class="button">
+            <div class="logo">Интернет-магазин <br>
+                <span class="ryba">рыбной продукции</span>
+            </div>
+            <div class="basket">
+                <search></search>
+                <button class="cart-button" type="button" @click="showCart = !showCart">Корзина</button>
+                
+                <cart   :cart-items="cartItems"
+                        :img="imgCart"
+                        :visibility="showCart"
+                        @remove="remove"></cart> 
+            </div>    
+        </div>
+    </header>
+    <main>
+
+<!-- добавляем товары  -->       
+        <div class="goods-list">
+            <div class="goods-item" v-for="item of filtered" :key="item.id_product">
+                <img :src="imgProduct" alt="img" class="item-img">
+                <h3 class="item-text">{{ item.product_name }}</h3>
+                <p class="item-text">${{ item.price }}</p>
+                <button class="buy-btn" :data-product="item" @click="addProduct(item)">Купить</button>
+            </div>
+        </div>
+
+<!--выдает ошибку -->    
+        <products :products="filtered" :img="ImgProduct" @add-product="addProduct"></products>    
+    </main>
+    <error v-if="error"></error>
+</div>
+    <!-- футер с формой обратной связью   -->
+
+    <footer class="footer">
+        <div class="footer-form">
+            <h3 class="footer-header">Форма обратной связи</h3>
+            <form class="footer-form" id="contact" action="#"  name="contact">
+                <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя" required>
+                <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон" required> 
+                <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail" required> 
+                <div class="span"></div>
+                <textarea id="msg" class="txtarea" name="msg" placeholder="Cообщение"></textarea>
+                
+                <button class="footer-send" id="send">Отправить</button>
+            </form>
+        </div>
+        <hr>
+        <div class="footer-copy">
+            <div class="copy-end">
+                <p class="copy-end_text">&copy 2021 Интернет-магазин рыбной продукции</p>
+            </div>
+            <div class="copy-smm">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></i></a>
+                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                <a href="#"><i class="fab fa-google-plus-square"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
+    <script src="js/productComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
+    <script src="js/main-ls5.js"></script> 
+    <script src="js/filter.js"></script>
+    <script src="js/error.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url(img/bgr.jpg);
+    background-size: 100%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #b59c8d;
+}
+
+
+.products {
+    margin-top: 50px;
+}
+
+.logo {
+    font-weight: 400;
+    color: #f16d7f;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    padding-top: 25px;
+}
+
+.ryba {
+    font-size: 25px;
+    font-weight: 700;
+    color: #F8F8F8;
+}
+
+
+.cart-button {
+    background-color: #f3f2f1;
+    color: #b59c8d;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    display: inline-block;
+    padding: 23px 18px;
+    border: transparent 1px solid;
+    transition: color .5s, background-color .5s;
+    cursor: pointer;
+    opacity: 0.6;
+    margin-left: 5px;
+}
+
+.cart-button:hover {
+    background: #f16d7f;
+    opacity: 1
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.product-item {
+    box-sizing: border-box;
+    width: 263px;
+    margin-bottom: 10px;
+    background: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px
+}
+
+
+.product-item h3 {
+    font-weight: 400;
+    color: #b59c8d;
+    font-size: 30px;
+    letter-spacing: 0.75px;
+    transition: color .5s;
+    padding-top: 25px;
+}
+
+
+.product-item p {
+    color: #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.buy-btn {
+    padding: 16px 42px 16px 42px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background: #b59c8d;
+    border: none;
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    background: #f16d7f;
+}
+
+.invisible {
+    display: none;
+}
+
+.basket {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cart-block {
+    box-sizing: border-box;
+    width: 320px;
+    position: absolute;
+    top: 22%;
+    left: 75%;
+    background-color: #f3f2f1;
+    margin-top: 8px;
+    opacity: 0.8;
+    padding: 20px 25px;
+}
+
+
+.cart-block {
+    justify-content: right;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+    align-items: center;
+}
+
+
+.cart-block:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #f3f2f1;
+    transform: rotate(45deg);
+    top: -5px;
+    left: 90px;
+}
+
+
+.cart-item {
+    text-decoration: none;
+    display: flex;
+    padding: 20px 15px;
+    color: #b59c8d;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f16d7f;
+}
+
+
+.right-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #b59c8d;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.product-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    padding: 20px 25px;
+}
+
+
+.product-img {
+    width: 25%;
+    padding-right: 8px;
+}
+
+.product-price {
+    padding-right: 8px;
+}
+
+.quantity {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 8px;
+}
+
+.delete-button {
+    background: #b59c8d;
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    margin: 10px auto;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: color .5s, background-color .5s;
+}
+
+.delete-button:hover {
+    background: #f16d7f;
+    opacity: 1;
+    transition: color .5s, background-color .5s;
+
+}
+
+.footer {
+
+    background-color: #b59c8d;
+    height: auto;
+    margin-top: 100px;
+}
+
+
+.footer-form {
+    display: inline-block;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-left: 30px;
+}
+
+.txt {
+    height: 49px;
+    width: 190px;
+    background-color: #E1E1E1;
+    color: #000000;
+    border: none;
+    border-radius: 20px 20px;
+    opacity: 0.4;
+    text-indent: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 1;
+    padding: 5px 9px;
+    margin-bottom: 10px;
+}
+
+.search-form {
+    display: inline-block;
+    justify-content: center;
+}
+
+.search-field {
+    height: 49px;
+    background-color: #E1E1E1;
+    color: #000000;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    opacity: 0.4;
+    text-indent: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 1;
+}
+
+.txtarea {
+    width: 617px;
+    height: 80px;
+    background-color: #E1E1E1;
+    color: #000000;
+    border: none;
+    border-radius: 20px 20px;
+    opacity: 0.4;
+    text-indent: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    opacity: 1;
+    padding: 5px 9px;
+    resize: none;
+}
+
+.footer-send {
+    color: #b59c8d;
+    display: block;
+    cursor: pointer;
+    padding: 5px 11px;
+    font-size: 1.2em;
+    border-radius: 2px;
+    background-color: #f3f2f1;
+    width: 210px;
+    margin-bottom: 20px;
+    border: transparent 1px solid;
+    transition: color .5s, background-color .5s;
+    opacity: 0.6;
+}
+
+.footer-send:hover {
+    background-color: #f3f2f1;
+    background: #f16d7f;
+    opacity: 1
+}
+
+.footer-copy {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-header {
+    font-weight: 400;
+    color: #f16d7f;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    padding: 45px 10px 20px 46px;
+}
+
+
+.footer-copy i {
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.footer-copy i:hover {
+    color: #f16d7f;
+}
+
+.error-msg {
+    color: #f16d7f;
+    ;
+    margin: 10px 0;
+}
+
+.invalid {
+    border: 2px solid #757575;
+}
+
+.valid {
+    border: 2px solid green;
+}
+
+.btn-search {
+    color: #ffffff;
+    opacity: 1;
+    margin-left: -5px;
+    height: 50px;
+    width: 49px;
+}
+
+.btn-search:hover {
+    background-color: #f16d7f;
+    opacity: 1;
+}
